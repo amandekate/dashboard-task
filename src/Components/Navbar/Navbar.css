@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px 0 50px;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__left p {
+    margin: 0;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.navbar__right_item {
+    margin: 0 10px;
+}
+
+.downarrow {
+    margin: 0;
+}
