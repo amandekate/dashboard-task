@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Counters from "./Components/Counters/Counters";
 import Navbar from "./Components/Navbar/Navbar";
 import ShipmentLog from "./Components/ShipmentLog/ShipmentLog";
 import Timeline from "./Components/Timeline/Timeline";
+import dataFetch from "./Utils/dataFetch";
 
 const App = () => {
+  const [apiData, setApiData] = useState([]);
+  const [shippmentData, setShippmentData] = useState([]);
+
+  useEffect(() => {
+    dataFetch()
+      .then(function (response) {
+        setApiData(response.data);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    // console.log(apiData);
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="App">
       <Navbar />
@@ -16,7 +43,7 @@ const App = () => {
             <Timeline />
           </div>
           <div className="col-md-8 col-sm-12 column">
-            <ShipmentLog />
+            <ShipmentLog data={apiData} />
           </div>
         </div>
       </div>

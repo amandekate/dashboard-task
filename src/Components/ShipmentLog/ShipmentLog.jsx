@@ -1,139 +1,23 @@
 import React from "react";
 import "./ShipmentLog.css";
 
-const ShipmentLog = () => {
-  const shippmentLogs = [
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Processing",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-    {
-      awbNumber: "#273126375",
-      transporter: "DTDC",
-      source: "Bangalore",
-      destination: "Delhi",
-      brand: "USPA",
-      startDate: "01/07/2019",
-      ETD: "01/07/2019",
-      status: "Delivered",
-    },
-  ];
+const ShipmentLog = ({ data }) => {
+  function styles(value) {
+    if (value === "DEL") {
+      return "DEL";
+    }
+    if (value === "OOD") {
+      return "OOD";
+    }
+    if (value === "UND") {
+      return "UND";
+    }
+    if (value === "INT"){
+        return "INT"
+    }
+    return "";
+  }
+
   return (
     <div className="shippment-log">
       <table>
@@ -150,27 +34,22 @@ const ShipmentLog = () => {
           </tr>
         </thead>
         <tbody>
-          {shippmentLogs.map((log) => {
+          {data.map((log) => {
+            const value = log.current_status_code;
             return (
               <tr className="shippment-entry">
-                <td>{log.awbNumber}</td>
-                <td>{log.transporter}</td>
-                <td>{log.source}</td>
-                <td>{log.destination}</td>
-                <td>{log.brand}</td>
-                <td>{log.startDate}</td>
-                <td>{log.ETD}</td>
-                <td
-              className={log.status === "Delivered" ? "delivered" : "not-delivered"}
-                >{log.status}</td>
+                <td>#{log.awbno}</td>
+                <td>{log.carrier}</td>
+                <td>{log.from ? log.from : "NA"}</td>
+                <td>{log.to ? log.to : "NA"}</td>
+                <td>USPA</td>
+                <td>{log.pickup_date ? log.pickup_date.substr(0, 10) : "NA" }</td>
+                {/* <td>{log.extra_fields.expected_delivery_date}</td> */}
+                <td></td>
+                <td className={`${styles(value)}`}>{log.current_status}</td>
               </tr>
             );
           })}
-          <tr>
-            <td>text3.1</td>
-            <td>text3.2</td>
-            <td>text3.3</td>
-          </tr>
         </tbody>
       </table>
     </div>

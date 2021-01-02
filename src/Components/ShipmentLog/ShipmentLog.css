@@ -26,10 +26,17 @@ th {
   background-color: white;
 }
 
-.delivered {
+.DEL {
   color: green;
 }
 
-.not-delivered {
-  color: red;
+.OOD {
+  color: blue;
+}
+
+.UND {
+    color: red;
+}
+.INT {
+    color: yellow;
 }
