@@ -50,7 +50,7 @@ h1 {
   font-weight: 100;
 }
 
-.counter:hover {
+.Selected {
   color: white;
   background: #2e5bff;
   transition: color 0.5s ease, background 0.5s ease;

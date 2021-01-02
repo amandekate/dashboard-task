@@ -1,36 +1,39 @@
+import { CategoryRounded } from "@material-ui/icons";
 import React from "react";
 import "./Counters.css";
 
-const Counters = () => {
-  const categories = [
-    {
-      name: "DEL",
-      count: 912,
-    },
-    {
-      name: "INT",
-      count: 232,
-    },
-    {
-      name: "OOD",
-      count: 338,
-    },
-    {
-      name: "DEX",
-      count: 354,
-    },
-    {
-      name: "NFI",
-      count: 789,
-    },
-  ];
+const Counters = ({ data, counter, setCounter }) => {
+  let Categories = data.reduce((total, item) => {
+    const { current_status_code } = item;
+    if (!current_status_code) return total;
+    if (!total[current_status_code]) {
+      total[current_status_code] = { label: current_status_code, value: 1 };
+    } else {
+      total[current_status_code] = {
+        ...total[current_status_code],
+        value: total[current_status_code].value + 1,
+      };
+    }
+    return total;
+  }, {});
+
+  Categories = Object.values(Categories);
+
+  const selected = "Selected";
+
   return (
     <div className="counter-container">
-      {categories.map((category) => {
+      {Categories.map((Category) => {
         return (
-          <div key={category.name} className="counter">
-            <h3>{category.name}</h3>
-            <h1>{category.count}</h1>
+          <div
+            key={Category.label}
+            className={`${
+              counter === Category.label ? selected : null
+            } counter`}
+            // onClick={setCounter(Category.label)}
+          >
+            <h3>{Category.label}</h3>
+            <h1>{Category.value}</h1>
           </div>
         );
       })}

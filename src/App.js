@@ -7,7 +7,6 @@ import dataFetch from "./Utils/dataFetch";
 
 const App = () => {
   const [apiData, setApiData] = useState([]);
-  const [counter, setCounter] = useState("DEL");
 
   useEffect(() => {
     dataFetch()
@@ -23,8 +22,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Counters counter={counter} />
-      <Shippment data={apiData} counter={counter} setCounter={setCounter} />
+      <Shippment data={apiData} />
     </div>
   );
 };

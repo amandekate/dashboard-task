@@ -1,3 +1,63 @@
+/* Counter CSS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --roboto: "Roboto", sans-serif;
+  --size: 85px;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--roboto);
+  width: 60%;
+  margin: 30px auto;
+}
+
+.counter {
+  cursor: pointer;
+  color: #2e5bff;
+  background: #d5deff;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  height: var(--size);
+  width: var(--size);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: color 0.5s ease, background 0.5s ease;
+}
+
+.counter h3,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.counter h3 {
+  margin-right: auto;
+  font-size: 15px;
+}
+
+.counter h1 {
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.Selected {
+  color: white;
+  background: #2e5bff;
+  transition: color 0.5s ease, background 0.5s ease;
+}
+
 /* Timeline CSS */
 .timeline {
   width: 100%;
@@ -51,8 +111,6 @@
   border-radius: 20px; /* roundness of the scroll thumb */
   border: none; /* creates padding around scroll thumb */
 }
-
-
 
 .destination {
   background-image: url(../../Assets/SVG/destination.svg);
@@ -129,7 +187,7 @@
 }
 
 .shippment-log::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 0px; /* width of the entire scrollbar */
 }
 .shippment-log::-webkit-scrollbar-track {
@@ -149,10 +207,11 @@
 }
 
 .shippment-log tbody {
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 
 .shippment-entry {
+  cursor: pointer;
   border-top: 1px solid rgb(218, 216, 216);
   height: 50px;
 }
