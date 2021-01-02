@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Counters from "./Components/Counters/Counters";
 import Navbar from "./Components/Navbar/Navbar";
 import Shippment from "./Components/Shippment/Shippment";
 import dataFetch from "./Utils/dataFetch";

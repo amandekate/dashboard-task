@@ -92,6 +92,8 @@ const Shippment = ({ data }) => {
                             );
                           });
                         }
+
+                        return null;
                       } else {
                         return null;
                       }
@@ -154,6 +156,7 @@ const Shippment = ({ data }) => {
                         </tr>
                       );
                     }
+                    return null;
                   })}
                 </tbody>
               </table>
