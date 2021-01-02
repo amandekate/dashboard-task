@@ -1,3 +1,4 @@
+/* Timeline CSS */
 .timeline {
   width: 100%;
   height: 400px;
@@ -9,6 +10,7 @@
 .track {
   position: relative;
   width: fit-content;
+  width: 100%;
   height: 100%;
   background: transparent;
   display: flex;
@@ -29,6 +31,29 @@
   background-size: 15px;
 }
 
+.track-middle {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 70%;
+  overflow: scroll;
+}
+
+.track-middle::-webkit-scrollbar {
+  width: 5px;
+  height: 0px; /* width of the entire scrollbar */
+}
+.track-middle::-webkit-scrollbar-track {
+  background: #9eb3ff; /* color of the tracking area */
+}
+.track-middle::-webkit-scrollbar-thumb {
+  background-color: #2e5bff; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: none; /* creates padding around scroll thumb */
+}
+
+
+
 .destination {
   background-image: url(../../Assets/SVG/destination.svg);
 }
@@ -41,7 +66,7 @@
   background: tranparent;
   height: 330px;
   top: 15px;
-  left: 15px;
+  left: 18px;
   border: 3px gray;
   border-style: hidden dashed hidden hidden;
 }
@@ -49,8 +74,9 @@
 .status-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 88%;
   font-size: 1vw;
+  margin-left: auto;
 }
 
 .status-bar {
@@ -72,7 +98,7 @@
   content: "";
   width: 15px;
   height: 15px;
-  left: -42px;
+  left: -37px;
   top: 15px;
   background-color: #2e5bff;
   border-radius: 50%;
@@ -115,3 +141,46 @@
   border: none; /* creates padding around scroll thumb */
 }
 
+/* Shippment Log CSS */
+.shippment-log {
+  height: inherit;
+  overflow: scroll;
+  border: 1px solid rgb(218, 216, 216);
+}
+
+.shippment-log tbody {
+  font-size: 1.2vw;
+}
+
+.shippment-entry {
+  border-top: 1px solid rgb(218, 216, 216);
+  height: 50px;
+}
+
+table {
+  width: 100%;
+  position: relative;
+}
+
+th {
+  font-weight: 100;
+  color: gray;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.DEL {
+  color: green;
+}
+
+.OOD {
+  color: blue;
+}
+
+.UND {
+  color: red;
+}
+.INT {
+  color: yellow;
+}

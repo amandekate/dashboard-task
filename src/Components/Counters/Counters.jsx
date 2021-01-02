@@ -28,7 +28,7 @@ const Counters = () => {
     <div className="counter-container">
       {categories.map((category) => {
         return (
-          <div class="counter">
+          <div key={category.name} className="counter">
             <h3>{category.name}</h3>
             <h1>{category.count}</h1>
           </div>
