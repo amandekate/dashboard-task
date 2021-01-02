@@ -1,0 +1,35 @@
+.shippment-log {
+  height: inherit;
+  overflow: scroll;
+  border: 1px solid rgb(218, 216, 216);
+}
+
+.shippment-log tbody {
+  font-size: 1.2vw;
+}
+
+.shippment-entry {
+  border-top: 1px solid rgb(218, 216, 216);
+  height: 50px;
+}
+
+table {
+  width: 100%;
+  position: relative;
+}
+
+th {
+  font-weight: 100;
+  color: gray;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.delivered {
+  color: green;
+}
+
+.not-delivered {
+  color: red;
+}

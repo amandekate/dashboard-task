@@ -12,17 +12,18 @@
 
 .counter-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   font-family: var(--roboto);
   width: 60%;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .counter {
   color: #2e5bff;
   background: #d5deff;
   padding: 10px;
+  margin: 0 10px;
   border-radius: 10px;
   height: var(--size);
   width: var(--size);

@@ -12,10 +12,10 @@ const App = () => {
       <Counters />
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4 col-sm-12">
+          <div className="col-md-4 col-sm-12 column">
             <Timeline />
           </div>
-          <div className="col-md-8 col-sm-12">
+          <div className="col-md-8 col-sm-12 column">
             <ShipmentLog />
           </div>
         </div>
